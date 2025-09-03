@@ -3,11 +3,13 @@ import { Button } from '@/components/ui/button';
 import { BuildingCard } from '@/components/BuildingCard';
 import { TrustCounter } from '@/components/TrustCounter';
 import { FloatingAuditIcon } from '@/components/FloatingAuditIcon';
+
 import heroBackground from '@/assets/hero-lake-bg.jpg';
 import luxuryTower from '@/assets/luxury-tower.jpg';
 import commercialBuilding from '@/assets/commercial-building.jpg';
 import affordableHousing from '@/assets/affordable-housing.jpg';
 import mixedUse from '@/assets/mixed-use.jpg';
+
 import {
   CheckCircle,
   Shield,
@@ -31,13 +33,22 @@ const Landing = () => {
             <span className="font-bold text-xl gradient-text">HANDOVER 360™</span>
           </div>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#how-it-works" className="text-foreground/80 hover:text-primary transition-colors">
+            <a
+              href="#how-it-works"
+              className="text-foreground/80 hover:text-primary transition-colors"
+            >
               How It Works
             </a>
-            <a href="#trust-gap" className="text-foreground/80 hover:text-primary transition-colors">
+            <a
+              href="#trust-gap"
+              className="text-foreground/80 hover:text-primary transition-colors"
+            >
               Trust Gap
             </a>
-            <a href="#features" className="text-foreground/80 hover:text-primary transition-colors">
+            <a
+              href="#features"
+              className="text-foreground/80 hover:text-primary transition-colors"
+            >
               Features
             </a>
           </div>
@@ -53,7 +64,7 @@ const Landing = () => {
         <div
           className="absolute inset-0 parallax"
           style={{
-            backgroundImage: `url(${heroBackground})`,
+            backgroundImage: url(${heroBackground}),
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed',
@@ -77,8 +88,8 @@ const Landing = () => {
             with <span className="gradient-text">HANDOVER 360™</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up">
-            Discover our portfolio of certified properties across all building categories. From luxury towers to
-            affordable housing - every project audited to perfection.
+            Discover our portfolio of certified properties across all building categories. From
+            luxury towers to affordable housing - every project audited to perfection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in">
             <Button variant="hero" size="xl" className="group">
@@ -120,8 +131,8 @@ const Landing = () => {
               Our <span className="gradient-text">Industry-Graded</span> Portfolio
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every building in our network undergoes rigorous HANDOVER 360™ auditing. Explore buildings across all
-              categories with verified trust scores.
+              Every building in our network undergoes rigorous HANDOVER 360™ auditing. Explore
+              buildings across all categories with verified trust scores.
             </p>
           </div>
 
@@ -186,7 +197,9 @@ const Landing = () => {
 
           {/* Grade Distribution */}
           <div className="mt-16 glass-card p-8">
-            <h3 className="text-2xl font-bold text-center mb-8">Grade Distribution Across Our Portfolio</h3>
+            <h3 className="text-2xl font-bold text-center mb-8">
+              Grade Distribution Across Our Portfolio
+            </h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary mb-2">34%</div>
@@ -231,11 +244,10 @@ const Landing = () => {
               How <span className="gradient-text">HANDOVER 360™</span> Works
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our revolutionary platform creates a seamless bridge between builders and buyers, ensuring trust through
-              complete transparency.
+              Our revolutionary platform creates a seamless bridge between builders and buyers,
+              ensuring trust through complete transparency.
             </p>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center group">
               <div className="glass-card p-8 mb-6 hover:shadow-trust transition-all duration-300 magnetic">
@@ -244,8 +256,8 @@ const Landing = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Real-Time Monitoring</h3>
                 <p className="text-muted-foreground">
-                  Our certified auditors conduct stage-wise inspections with live updates and photo documentation
-                  throughout construction.
+                  Our certified auditors conduct stage-wise inspections with live updates and photo
+                  documentation throughout construction.
                 </p>
               </div>
             </div>
@@ -256,8 +268,8 @@ const Landing = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Transparent Reporting</h3>
                 <p className="text-muted-foreground">
-                  Detailed reports with visual evidence, compliance scores, and actionable insights for both buyers and
-                  builders.
+                  Detailed reports with visual evidence, compliance scores, and actionable insights
+                  for both buyers and builders.
                 </p>
               </div>
             </div>
@@ -268,8 +280,8 @@ const Landing = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-3">Trust Analytics</h3>
                 <p className="text-muted-foreground">
-                  Advanced analytics provide trust scores, quality trends, and predictive insights for informed
-                  decision-making.
+                  Advanced analytics provide trust scores, quality trends, and predictive insights
+                  for informed decision-making.
                 </p>
               </div>
             </div>
@@ -299,19 +311,16 @@ const Landing = () => {
               { icon: TrendingUp, title: 'Analytics Dashboard', desc: 'Data-driven insights' },
               { icon: CheckCircle, title: 'Mobile App', desc: 'On-the-go access' },
               { icon: Home, title: '3D Walkthroughs', desc: 'Interactive property tours' },
-            ].map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="glass-card p-6 hover:shadow-float transition-all duration-300 group magnetic"
-                >
-                  <Icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                  <h3 className="font-bold mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">{feature.desc}</p>
-                </div>
-              );
-            })}
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="glass-card p-6 hover:shadow-float transition-all duration-300 group magnetic"
+              >
+                <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
+                <h3 className="font-bold mb-2">{feature.title}</h3>
+                <p className="text-sm text-muted-foreground">{feature.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -323,7 +332,8 @@ const Landing = () => {
             Ready to Experience <span className="gradient-text">Trust</span>?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of homebuyers and builders who've transformed their property journey with HANDOVER 360™.
+            Join thousands of homebuyers and builders who've transformed their property journey
+            with HANDOVER 360™.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="trust" size="xl" className="group">
