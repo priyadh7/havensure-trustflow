@@ -2,41 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* HANDOVER 360™ Design System - Nature-inspired trust & transparency
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Nature-inspired base colors */
+    --background: 200 15% 98%;
+    --foreground: 200 25% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Glassmorphic card system */
+    --card: 200 50% 98%;
+    --card-foreground: 200 25% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 200 40% 99%;
+    --popover-foreground: 200 25% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Mountain Lake Primary (Emerald Trust) */
+    --primary: 158 64% 52%;
+    --primary-foreground: 200 15% 98%;
+    --primary-glow: 158 84% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Succulent Secondary (Deep Burgundy) */
+    --secondary: 350 45% 35%;
+    --secondary-foreground: 200 15% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Crystalline Accent (Transparency Blue) */
+    --accent: 195 75% 58%;
+    --accent-foreground: 200 15% 98%;
+    --accent-light: 195 85% 75%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Misty Neutrals */
+    --muted: 200 20% 92%;
+    --muted-foreground: 200 15% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 200 25% 88%;
+    --input: 200 30% 94%;
+    --ring: 158 64% 52%;
 
-    --radius: 0.5rem;
+    /* Trust & Transparency Gradients */
+    --gradient-trust: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-lake: linear-gradient(180deg, hsl(195 75% 65%), hsl(158 64% 52%));
+    --gradient-glass: linear-gradient(145deg, hsla(200, 50%, 98%, 0.8), hsla(200, 50%, 95%, 0.4));
+    --gradient-succulent: linear-gradient(135deg, hsl(var(--secondary)), hsl(350 65% 45%));
+
+    /* Glassmorphism & Transparency */
+    --glass-bg: hsla(200, 50%, 98%, 0.25);
+    --glass-border: hsla(200, 50%, 100%, 0.2);
+    --glass-shadow: 0 8px 32px hsla(195, 75%, 25%, 0.15);
+
+    /* Organic shadows */
+    --shadow-trust: 0 20px 40px hsla(158, 64%, 25%, 0.2);
+    --shadow-float: 0 12px 24px hsla(195, 75%, 35%, 0.15);
+    --shadow-depth: 0 4px 16px hsla(200, 25%, 35%, 0.1);
+
+    /* Animations & Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    --transition-glass: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +85,53 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Deep Lake Night Mode */
+    --background: 200 25% 8%;
+    --foreground: 200 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 200 20% 10%;
+    --card-foreground: 200 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 200 25% 8%;
+    --popover-foreground: 200 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Luminous Trust in darkness */
+    --primary: 158 84% 65%;
+    --primary-foreground: 200 25% 8%;
+    --primary-glow: 158 94% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Midnight Succulent */
+    --secondary: 350 55% 45%;
+    --secondary-foreground: 200 15% 95%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Crystalline Moonlight */
+    --accent: 195 85% 68%;
+    --accent-foreground: 200 25% 8%;
+    --accent-light: 195 95% 78%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 200 15% 15%;
+    --muted-foreground: 200 10% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 200 15% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 200 20% 18%;
+    --input: 200 25% 12%;
+    --ring: 158 84% 65%;
+
+    /* Dark mode gradients with luminosity */
+    --gradient-trust: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-lake: linear-gradient(180deg, hsl(195 85% 35%), hsl(158 84% 35%));
+    --gradient-glass: linear-gradient(145deg, hsla(200, 20%, 15%, 0.8), hsla(200, 20%, 8%, 0.4));
+    --gradient-succulent: linear-gradient(135deg, hsl(var(--secondary)), hsl(350 75% 55%));
+
+    --glass-bg: hsla(200, 20%, 15%, 0.4);
+    --glass-border: hsla(200, 50%, 80%, 0.1);
+    --glass-shadow: 0 8px 32px hsla(195, 75%, 5%, 0.5);
+
+    --shadow-trust: 0 20px 40px hsla(158, 84%, 15%, 0.4);
+    --shadow-float: 0 12px 24px hsla(195, 85%, 15%, 0.3);
+    --shadow-depth: 0 4px 16px hsla(200, 25%, 5%, 0.3);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -101,5 +150,75 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Glassmorphism utilities */
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl;
+  }
+
+  /* Trust animation keyframes */
+  .trust-glow {
+    animation: trust-pulse 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes trust-pulse {
+    0% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+    100% {
+      box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  /* Floating animation for 3D elements */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(1deg);
+    }
+    50% {
+      transform: translateY(-5px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-15px) rotate(-1deg);
+    }
+  }
+
+  /* Parallax scrolling */
+  .parallax {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  /* Magnetic hover effect */
+  .magnetic {
+    transition: var(--transition-spring);
+  }
+
+  .magnetic:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: var(--gradient-trust);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }
