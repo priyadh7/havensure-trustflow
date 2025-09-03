@@ -279,7 +279,7 @@ const Landing = () => {
   { icon: Cube, title: "3D Walkthroughs", desc: "Interactive property tours" },
   { icon: CheckCircle, title: "Peace of Mind", desc: "Guaranteed trust & transparency" },
 ].map((feature, index) => {
-  const Icon = feature.icon; // ✅ Capitalize and assign
+  const Icon = feature.icon; // ✅ Assign here
   return (
     <div
       key={index}
@@ -294,6 +294,7 @@ const Landing = () => {
     </div>
   );
 })}
+
 
 
       {/* Call to Action */}
