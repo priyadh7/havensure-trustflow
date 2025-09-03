@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { BuildingCard } from '@/components/BuildingCard';
 import { TrustCounter } from '@/components/TrustCounter';
 import { FloatingAuditIcon } from '@/components/FloatingAuditIcon';
 import heroBackground from '@/assets/hero-lake-bg.jpg';
+import luxuryTower from '@/assets/luxury-tower.jpg';
+import commercialBuilding from '@/assets/commercial-building.jpg';
+import affordableHousing from '@/assets/affordable-housing.jpg';
+import mixedUse from '@/assets/mixed-use.jpg';
 import { 
   CheckCircle, 
   Shield, 
@@ -71,112 +76,154 @@ const Landing = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            Transform <span className="gradient-text">Promises</span>
+            Industry-Graded <span className="gradient-text">Buildings</span>
             <br />
-            into <span className="gradient-text">Proof</span>
-            <br />
-            with HANDOVER 360™
+            with <span className="gradient-text">HANDOVER 360™</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up">
-            The cutting-edge trust and transparency platform that revolutionizes 
-            how homebuyers and builders experience quality audits.
+            Discover our portfolio of certified properties across all building categories.
+            From luxury towers to affordable housing - every project audited to perfection.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in">
             <Button variant="hero" size="xl" className="group">
-              Start Your Audit Journey
+              Explore Graded Buildings
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="transparent" size="xl">
-              Watch Demo
+              View Audit Process
             </Button>
           </div>
 
           {/* Trust Metrics */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 glass-card p-8 animate-fade-in">
             <div className="text-center">
-              <TrustCounter target={98} suffix="%" />
-              <p className="text-muted-foreground mt-2">Trust Score</p>
+              <TrustCounter target={2500} suffix="+" />
+              <p className="text-muted-foreground mt-2">Buildings Graded</p>
             </div>
             <div className="text-center">
-              <TrustCounter target={10000} suffix="+" />
-              <p className="text-muted-foreground mt-2">Audits Completed</p>
+              <TrustCounter target={850} suffix="+" />
+              <p className="text-muted-foreground mt-2">A+ Grade Buildings</p>
+            </div>
+            <div className="text-center">
+              <TrustCounter target={98} suffix="%" />
+              <p className="text-muted-foreground mt-2">Quality Standards Met</p>
             </div>
             <div className="text-center">
               <TrustCounter target={500} suffix="+" />
-              <p className="text-muted-foreground mt-2">Partner Builders</p>
-            </div>
-            <div className="text-center">
-              <TrustCounter target={99} suffix="%" />
-              <p className="text-muted-foreground mt-2">Client Satisfaction</p>
+              <p className="text-muted-foreground mt-2">Certified Builders</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Gap Visualization */}
-      <section id="trust-gap" className="py-24 bg-muted/30">
+      {/* Industry Graded Buildings Showcase */}
+      <section className="py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              The <span className="gradient-text">Trust Gap</span> Crisis
+              Our <span className="gradient-text">Industry-Graded</span> Portfolio
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Traditional property handovers leave buyers in the dark. 
-              HANDOVER 360™ bridges the gap with transparent, real-time quality assurance.
+              Every building in our network undergoes rigorous HANDOVER 360™ auditing.
+              Explore buildings across all categories with verified trust scores.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Before */}
-            <div className="glass-card p-8 relative">
-              <div className="absolute top-4 right-4 bg-destructive/20 text-destructive px-3 py-1 rounded-full text-sm font-medium">
-                Traditional
-              </div>
-              <h3 className="text-2xl font-bold mb-6 text-destructive">Before HANDOVER 360™</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                  Hidden defects discovered post-handover
-                </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                  Lack of transparency in quality checks
-                </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                  Disputes between buyers and builders
-                </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                  Delayed issue resolution
-                </div>
-              </div>
-            </div>
+          {/* Buildings Grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+            <BuildingCard
+              title="Emerald Heights Luxury Residences"
+              location="Prime Downtown District"
+              image={luxuryTower}
+              grade="A+"
+              score={96}
+              type="Residential"
+              units={340}
+              completionDate="Dec 2024"
+              builder="Premium Developers Ltd."
+              status="Completed"
+              description="Ultra-luxury residential tower featuring premium finishes, smart home integration, and world-class amenities. Every unit meets the highest quality standards."
+            />
+            
+            <BuildingCard
+              title="TechHub Commercial Center"
+              location="Business Innovation Zone"
+              image={commercialBuilding}
+              grade="A"
+              score={92}
+              type="Commercial"
+              units={120}
+              completionDate="Mar 2024"
+              builder="Corporate Builders Inc."
+              status="Completed"
+              description="State-of-the-art commercial complex designed for modern businesses. Features sustainable architecture and cutting-edge building management systems."
+            />
+          </div>
 
-            {/* After */}
-            <div className="glass-card p-8 relative shadow-trust">
-              <div className="absolute top-4 right-4 bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                HANDOVER 360™
+          <div className="grid lg:grid-cols-2 gap-8">
+            <BuildingCard
+              title="Harmony Community Homes"
+              location="Family Neighborhood"
+              image={affordableHousing}
+              grade="A"
+              score={89}
+              type="Residential"
+              units={180}
+              completionDate="Jun 2024"
+              builder="Community First Developers"
+              status="In Progress"
+              description="Thoughtfully designed affordable housing that doesn't compromise on quality. Creating vibrant communities with accessible living solutions."
+            />
+            
+            <BuildingCard
+              title="Urban Plaza Mixed Development"
+              location="City Center"
+              image={mixedUse}
+              grade="B+"
+              score={85}
+              type="Mixed-Use"
+              units={250}
+              completionDate="Sep 2024"
+              builder="Metropolitan Developers"
+              status="In Progress"
+              description="Dynamic mixed-use development combining retail, office, and residential spaces. Fostering a live-work-play urban lifestyle."
+            />
+          </div>
+
+          {/* Grade Distribution */}
+          <div className="mt-16 glass-card p-8">
+            <h3 className="text-2xl font-bold text-center mb-8">Grade Distribution Across Our Portfolio</h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary mb-2">34%</div>
+                <div className="px-3 py-1 rounded-full border text-primary bg-primary/10 border-primary/20 text-sm font-medium">
+                  Grade A+
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-6 text-primary">After HANDOVER 360™</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  Real-time quality monitoring
+              <div className="text-center">
+                <div className="text-3xl font-bold text-accent mb-2">28%</div>
+                <div className="px-3 py-1 rounded-full border text-accent bg-accent/10 border-accent/20 text-sm font-medium">
+                  Grade A
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  Complete transparency with photo evidence
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-secondary mb-2">24%</div>
+                <div className="px-3 py-1 rounded-full border text-secondary bg-secondary/10 border-secondary/20 text-sm font-medium">
+                  Grade B+
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  Proactive issue identification
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-orange-500 mb-2">11%</div>
+                <div className="px-3 py-1 rounded-full border text-orange-500 bg-orange-500/10 border-orange-500/20 text-sm font-medium">
+                  Grade B
                 </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-primary" />
-                  Instant resolution tracking
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-destructive mb-2">3%</div>
+                <div className="px-3 py-1 rounded-full border text-destructive bg-destructive/10 border-destructive/20 text-sm font-medium">
+                  Grade C
                 </div>
               </div>
             </div>
