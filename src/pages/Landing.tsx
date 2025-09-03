@@ -1,60 +1,79 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
-import { BuildingCard } from '@/components/BuildingCard';
-import { TrustCounter } from '@/components/TrustCounter';
-import { FloatingAuditIcon } from '@/components/FloatingAuditIcon';
-import heroBackground from '@/assets/hero-lake-bg.jpg';
-import luxuryTower from '@/assets/luxury-tower.jpg';
-import commercialBuilding from '@/assets/commercial-building.jpg';
-import affordableHousing from '@/assets/affordable-housing.jpg';
-import mixedUse from '@/assets/mixed-use.jpg';
-import { 
-  CheckCircle, 
-  Shield, 
-  Eye, 
-  Zap, 
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { BuildingCard } from "@/components/BuildingCard";
+import { TrustCounter } from "@/components/TrustCounter";
+import { FloatingAuditIcon } from "@/components/FloatingAuditIcon";
+import heroBackground from "@/assets/hero-lake-bg.jpg";
+import luxuryTower from "@/assets/luxury-tower.jpg";
+import commercialBuilding from "@/assets/commercial-building.jpg";
+import affordableHousing from "@/assets/affordable-housing.jpg";
+import mixedUse from "@/assets/mixed-use.jpg";
+import {
+  CheckCircle,
+  Shield,
+  Eye,
+  Zap,
   ArrowRight,
   FileCheck,
   Users,
   BarChart3,
   Smartphone,
   Cube,
-  Folder
-} from 'lucide-react';
+  Folder,
+} from "lucide-react";
 
 const Landing = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Floating Navigation */}
-      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 glass-card px-8 py-4">
+      <nav className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 glass-card px-8 py-4 rounded-2xl shadow-lg backdrop-blur-md">
         <div className="flex items-center space-x-8">
           <div className="flex items-center space-x-2">
-            <Shield className="w-8 h-8 text-primary" />
-            <span className="font-bold text-xl gradient-text">HANDOVER 360™</span>
+            <Shield className="w-8 h-8 text-primary" aria-hidden="true" />
+            <span className="font-bold text-xl gradient-text">
+              HANDOVER 360™
+            </span>
           </div>
           <div className="hidden md:flex items-center space-x-6">
-            <a href="#how-it-works" className="text-foreground/80 hover:text-primary transition-colors">How It Works</a>
-            <a href="#portfolio" className="text-foreground/80 hover:text-primary transition-colors">Portfolio</a>
-            <a href="#features" className="text-foreground/80 hover:text-primary transition-colors">Features</a>
+            <a
+              href="#how-it-works"
+              className="text-foreground/80 hover:text-primary transition-colors"
+            >
+              How It Works
+            </a>
+            <a
+              href="#portfolio"
+              className="text-foreground/80 hover:text-primary transition-colors"
+            >
+              Portfolio
+            </a>
+            <a
+              href="#features"
+              className="text-foreground/80 hover:text-primary transition-colors"
+            >
+              Features
+            </a>
           </div>
-          <Button variant="trust" size="sm">Get Started</Button>
+          <Button variant="trust" size="sm">
+            Get Started
+          </Button>
         </div>
       </nav>
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background */}
-        <div 
+        <div
           className="absolute inset-0 parallax"
           style={{
             backgroundImage: `url(${heroBackground})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background/80" />
-        
+
         {/* Floating Icons */}
         <FloatingAuditIcon className="top-20 left-10" delay={0} />
         <FloatingAuditIcon className="top-40 right-20" delay={1} />
@@ -70,7 +89,8 @@ const Landing = () => {
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up">
             Discover our portfolio of certified properties across all categories.
-            From luxury towers to affordable housing – every project audited to perfection.
+            From luxury towers to affordable housing – every project audited to
+            perfection.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-scale-in">
             <Button variant="hero" size="xl" className="group">
@@ -83,7 +103,7 @@ const Landing = () => {
           </div>
 
           {/* Trust Counters */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 glass-card p-8 animate-fade-in">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 glass-card p-8 rounded-2xl shadow-lg animate-fade-in">
             <div className="text-center">
               <TrustCounter target={2500} suffix="+" />
               <p className="text-muted-foreground mt-2">Buildings Graded</p>
@@ -112,8 +132,9 @@ const Landing = () => {
               Our <span className="gradient-text">Industry-Graded</span> Portfolio
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Every building in our network undergoes rigorous HANDOVER 360™ auditing.
-              Explore properties across all categories with verified trust scores.
+              Every building in our network undergoes rigorous HANDOVER 360™
+              auditing. Explore properties across all categories with verified
+              trust scores.
             </p>
           </div>
 
@@ -186,43 +207,47 @@ const Landing = () => {
               How <span className="gradient-text">HANDOVER 360™</span> Works
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our platform creates a seamless bridge between builders and buyers, ensuring trust through complete transparency.
+              Our platform creates a seamless bridge between builders and buyers,
+              ensuring trust through complete transparency.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center group">
-              <div className="glass-card p-8 mb-6 hover:shadow-trust transition-all duration-300">
+              <div className="glass-card p-8 mb-6 hover:shadow-trust transition-all duration-300 rounded-xl">
                 <div className="w-16 h-16 bg-gradient-trust rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Eye className="w-8 h-8 text-white" />
+                  <Eye className="w-8 h-8 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Real-Time Monitoring</h3>
                 <p className="text-muted-foreground">
-                  Stage-wise inspections with live updates and photo documentation throughout construction.
+                  Stage-wise inspections with live updates and photo documentation
+                  throughout construction.
                 </p>
               </div>
             </div>
 
             <div className="text-center group">
-              <div className="glass-card p-8 mb-6 hover:shadow-trust transition-all duration-300">
+              <div className="glass-card p-8 mb-6 hover:shadow-trust transition-all duration-300 rounded-xl">
                 <div className="w-16 h-16 bg-gradient-lake rounded-full flex items-center justify-center mx-auto mb-4">
-                  <FileCheck className="w-8 h-8 text-white" />
+                  <FileCheck className="w-8 h-8 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Transparent Reporting</h3>
                 <p className="text-muted-foreground">
-                  Detailed reports with visual evidence, compliance scores, and actionable insights.
+                  Detailed reports with visual evidence, compliance scores, and
+                  actionable insights.
                 </p>
               </div>
             </div>
 
             <div className="text-center group">
-              <div className="glass-card p-8 mb-6 hover:shadow-trust transition-all duration-300">
+              <div className="glass-card p-8 mb-6 hover:shadow-trust transition-all duration-300 rounded-xl">
                 <div className="w-16 h-16 bg-gradient-succulent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BarChart3 className="w-8 h-8 text-white" />
+                  <BarChart3 className="w-8 h-8 text-white" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Trust Analytics</h3>
                 <p className="text-muted-foreground">
-                  Analytics provide trust scores, quality trends, and predictive insights for decision-making.
+                  Analytics provide trust scores, quality trends, and predictive
+                  insights for decision-making.
                 </p>
               </div>
             </div>
@@ -238,7 +263,8 @@ const Landing = () => {
               Powerful <span className="gradient-text">Features</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Everything you need for complete peace of mind in your property journey.
+              Everything you need for complete peace of mind in your property
+              journey.
             </p>
           </div>
 
@@ -251,10 +277,13 @@ const Landing = () => {
               { icon: BarChart3, title: "Analytics Dashboard", desc: "Data-driven insights" },
               { icon: Smartphone, title: "Mobile App", desc: "On-the-go access" },
               { icon: Cube, title: "3D Walkthroughs", desc: "Interactive property tours" },
-              { icon: CheckCircle, title: "Peace of Mind", desc: "Guaranteed trust & transparency" }
+              { icon: CheckCircle, title: "Peace of Mind", desc: "Guaranteed trust & transparency" },
             ].map((feature, index) => (
-              <div key={index} className="glass-card p-6 hover:shadow-float transition-all duration-300 group">
-                <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" />
+              <div
+                key={index}
+                className="glass-card p-6 hover:shadow-float transition-all duration-300 group rounded-xl"
+              >
+                <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" aria-hidden="true" />
                 <h3 className="font-bold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.desc}</p>
               </div>
@@ -270,7 +299,8 @@ const Landing = () => {
             Ready to Experience <span className="gradient-text">Trust</span>?
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Join thousands of homebuyers and builders who’ve transformed their property journey with HANDOVER 360™.
+            Join thousands of homebuyers and builders who’ve transformed their
+            property journey with HANDOVER 360™.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="trust" size="xl" className="group">
