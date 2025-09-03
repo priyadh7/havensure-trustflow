@@ -269,28 +269,32 @@ const Landing = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Shield, title: "Quality Assurance", desc: "Certified auditor inspections" },
-              { icon: Zap, title: "Instant Alerts", desc: "Immediate issue notifications" },
-              { icon: Users, title: "Stakeholder Portal", desc: "Unified communication hub" },
-              { icon: Folder, title: "Document Vault", desc: "Secure compliance storage" },
-              { icon: BarChart3, title: "Analytics Dashboard", desc: "Data-driven insights" },
-              { icon: Smartphone, title: "Mobile App", desc: "On-the-go access" },
-              { icon: Cube, title: "3D Walkthroughs", desc: "Interactive property tours" },
-              { icon: CheckCircle, title: "Peace of Mind", desc: "Guaranteed trust & transparency" },
-            ].map((feature, index) => (
-              <div
-                key={index}
-                className="glass-card p-6 hover:shadow-float transition-all duration-300 group rounded-xl"
-              >
-                <feature.icon className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform" aria-hidden="true" />
-                <h3 className="font-bold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+{[
+  { icon: Shield, title: "Quality Assurance", desc: "Certified auditor inspections" },
+  { icon: Zap, title: "Instant Alerts", desc: "Immediate issue notifications" },
+  { icon: Users, title: "Stakeholder Portal", desc: "Unified communication hub" },
+  { icon: Folder, title: "Document Vault", desc: "Secure compliance storage" },
+  { icon: BarChart3, title: "Analytics Dashboard", desc: "Data-driven insights" },
+  { icon: Smartphone, title: "Mobile App", desc: "On-the-go access" },
+  { icon: Cube, title: "3D Walkthroughs", desc: "Interactive property tours" },
+  { icon: CheckCircle, title: "Peace of Mind", desc: "Guaranteed trust & transparency" },
+].map((feature, index) => {
+  const Icon = feature.icon; // ✅ Capitalize and assign
+  return (
+    <div
+      key={index}
+      className="glass-card p-6 hover:shadow-float transition-all duration-300 group rounded-xl"
+    >
+      <Icon
+        className="w-8 h-8 text-primary mb-4 group-hover:scale-110 transition-transform"
+        aria-hidden="true"
+      />
+      <h3 className="font-bold mb-2">{feature.title}</h3>
+      <p className="text-sm text-muted-foreground">{feature.desc}</p>
+    </div>
+  );
+})}
+
 
       {/* Call to Action */}
       <section className="py-24">
